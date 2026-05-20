@@ -10,7 +10,7 @@ togglePassword.addEventListener('click', function (e) {
     password.setAttribute('type', type);
     
     // Thay đổi icon con mắt (nếu bạn muốn)
-    this.innerText = type === 'password' ? '👁️' : '🙈';
+    this.innerText = type === 'password' ? '👨‍🦯' : '🙈';
 });
 
 passwordInput.addEventListener('input', () => {

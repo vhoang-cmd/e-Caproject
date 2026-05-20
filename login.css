@@ -14,11 +14,13 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 350px;
+    width: 310px;
     text-align: center;
 }
 
-.input-group { text-align: left; margin-bottom: 20px; }
+.input-group-user { text-align: left; margin-bottom: 20px; }
+
+.input-group-password { text-align: left; margin-bottom: 5px; }
 
 .password-wrapper {
     position: relative; /* Làm gốc để con mắt căn chỉnh theo */
@@ -93,6 +95,16 @@ input[type="text"] {
     display: block;
     width: 120px;      /* chỉnh kích thước logo */
     height: auto;      /* giữ đúng tỉ lệ */
-    margin: 0 auto 20px; /* căn giữa + cách dưới 20px */
+    margin: 0 auto 5px; /* căn giữa + cách dưới 05px */
     object-fit: contain;
+}
+.password-remember{
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #6fc2bb;
+}
+h2{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Demo</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- login-box: box -> / -->
+        <div class="login-box">
+            <img src="/e-calogo.png" alt="eCaImages" class="logo">
+            <h2>e-Ca システム管理</h2>
+            <div class="input-group-user">
+                <label for="">User</label>
+                <input type="email" placeholder="ユーザー名をご入力ください。">
+            </div>
+            <div class="input-group-password">
+                <label for="">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" placeholder="パスワードをご入力ください。">
+                    <span class="eye-icon" id="togglePassword">🌱</span>
+                </div>
+                <div class="strength-bar-container">
+                    <div id="strength-bar" class="strength-bar"></div>
+                </div>
+            </div>
+            <div class="password-remember">
+                <span>パスワードをお忘れですか？</span>
+            </div>
+            
+            <button class="login-btn">Login</button>
+        </div>
+
+    </div>  
+</body>
+</html>
