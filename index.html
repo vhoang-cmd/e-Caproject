@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="e-calogo.png" alt="e-ca logo" class="logo">
+            <h2>e-ca管理システム</h2>
+
+            <div class="input-group">
+                <label>メールアドレス</label>
+                <input type="email" placeholder="ssfsfsf">
+            </div>
+
+            
+            <div class="input-group">
+                <label>パスワード</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="••••••••">
+                    <span class="eye-icon" id="togglePassword">👁️</span>
+                </div>
+                <div class="strength-bar-container">
+                    <div id="strength-bar" class="strength-bar"></div>
+                </div>
+                <p id="strength-text" class="strength-text">弱い (Yếu)</p>
+            </div>
+
+            <button class="login-btn">ログイン</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

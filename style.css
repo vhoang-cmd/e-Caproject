@@ -1,0 +1,98 @@
+/* Nền xanh sóng lượn giống hình */
+body {
+    background: linear-gradient(180deg, #a5c7f7 0%, #3b82f6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.input-group { text-align: left; margin-bottom: 20px; }
+
+.password-wrapper {
+    position: relative; /* Làm gốc để con mắt căn chỉnh theo */
+    width: 100%;
+}
+
+/* Đảm bảo tất cả input đều chiếm hết chiều ngang của khung */
+input[type="email"], 
+input[type="password"], 
+input[type="text"] {
+    width: 100%;
+    display: block; /* Ép xuống dòng so với label */
+    margin-top: 8px; /* Tạo khoảng cách với chữ phía trên */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Rất quan trọng để không bị tràn khung */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px; /* Cách lề phải 10px */
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+    cursor: pointer;
+    color: #666;
+    user-select: none; /* Ngăn chặn việc bôi đen icon khi click nhanh */
+}
+
+/* Thanh độ mạnh mật khẩu */
+.strength-bar-container {
+    background: #e0e0e0;
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%; /* Mặc định bằng 0 */
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.strength-text { font-size: 12px; margin-top: 5px; color: #ff4d4d; }
+
+.login-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+.login-btn:hover{
+    background-color: #2563eb;
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+    transform: translate(-2px);
+}
+.login-btn:active{
+    transform: translate(0);
+    box-shadow: 0 2px 4px rgba(37,99,235,0.2);
+    filter: brightness(0.9);
+
+}
+.logo{
+    display: block;
+    width: 120px;      /* chỉnh kích thước logo */
+    height: auto;      /* giữ đúng tỉ lệ */
+    margin: 0 auto 20px; /* căn giữa + cách dưới 20px */
+    object-fit: contain;
+}
