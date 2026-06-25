@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login-Demo</title>
     <link rel="stylesheet" href="./login.css">
 </head>
-<body>
-    
-</body>
-</html>
+
 
 <body>
     <div class="login-container">
         <div class="login-box">
-            <img class="logo" src="e-calogo.png" alt="e-ca" >
-            <h2>e-ca システム</h2>
+            <img class="logo" src="e-calogo.png" alt="e-ca">
+            <h2 class="h2-center">Place Manager System</h2>
             <div class="input-group">
-                <label>メールアドレス</label>
-                <input type="email" placeholder="メールアドレスご入力ください。">
+                <label class="lable">メールアドレス</label>
+                <input type="email" id="email-input" placeholder="メールアドレスご入力ください。" autocomplete="off">
             </div>
             <div class="input-group">
-                <label>パスワード</label>
+                <label class="lable">パスワード</label>
+
                 <div class="password-wrapper">
-                    <input type="password" placeholder="メールアドレスご入力ください。">
+                    <input type="password" id="password" placeholder="パスワードご入力ください。">
                     <span class="eye-icon" id="togglePassword">🌱</span>
                 </div>
-                
-                <!-- <span class="eye-icon" id="togglePassword">👁️</span> -->
-                 <div class="strength-bar-container">
-                    <div id="strength-bar" class="strength-bar"></div>
-                 </div>
-                 <!-- <p id="strength-text" class="strength-text">弱い</p> -->
 
+                <div class="strength-bar-container">
+                    <div id="strength-bar" class="strength-bar"></div>
+                </div>
+
+                <p id="strength-text" class="strength-text">弱い</p>
             </div>
             <span class="password-remember">パスワードをお忘れですか？</span>
             <button class="login-btn">ログイン</button>
 
         </div>
     </div>
+    <script src="./app.js"></script>
 
 </body>
 

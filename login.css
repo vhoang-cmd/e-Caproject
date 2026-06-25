@@ -15,7 +15,18 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     width: 310px;
+    
+}
+.h2-center{
     text-align: center;
+    font-size: 20px;
+}
+
+.lable{
+    text-align: left;
+    font-weight: solid;
+    margin-bottom: 5px;
+    font-size: 11px;
 }
 
 .input-group-user { text-align: left; margin-bottom: 20px; }
@@ -23,17 +34,17 @@ body {
 .input-group-password { text-align: left; margin-bottom: 5px; }
 
 .password-wrapper {
-    position: relative; /* Làm gốc để con mắt căn chỉnh theo */
+    position: relative; 
     width: 100%;
 }
 
-/* Đảm bảo tất cả input đều chiếm hết chiều ngang của khung */
+
 input[type="email"], 
 input[type="password"], 
 input[type="text"] {
     width: 100%;
-    display: block; /* Ép xuống dòng so với label */
-    margin-top: 8px; /* Tạo khoảng cách với chữ phía trên */
+    display: block; 
+    margin-top: 4px; 
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -42,7 +53,7 @@ input[type="text"] {
 
 .eye-icon {
     position: absolute;
-    right: 10px; /* Cách lề phải 10px */
+    right: 10px; 
     top: 50%;
     transform: translateY(-50%); /* Căn giữa theo chiều dọc */
     cursor: pointer;
@@ -50,19 +61,24 @@ input[type="text"] {
     user-select: none; /* Ngăn chặn việc bôi đen icon khi click nhanh */
 }
 
-/* Thanh độ mạnh mật khẩu */
+/* Khung bao bên ngoài (Cố định độ rộng và tạo nền xám mờ) */
 .strength-bar-container {
-    background: #e0e0e0;
-    height: 6px;
-    border-radius: 3px;
-    margin-top: 8px;
-    overflow: hidden;
+    width: 100%;
+    height: 6px;               /* Độ dày của thanh */
+    background-color: #e0e0e0; /* Màu nền xám khi chưa gõ gì */
+    border-radius: 3px;        /* Bo tròn hai đầu thanh cho đẹp */
+    margin-top: 8px;           /* Khoảng cách với ô input phía trên */
+    margin-bottom: 5px;
+    overflow: hidden;          /* Đảm bảo thanh màu bên trong không bị tràn ra ngoài */
 }
 
+/* Thanh màu bên trong (Sẽ được JS thay đổi width và màu sắc) */
 .strength-bar {
     height: 100%;
-    width: 0%; /* Mặc định bằng 0 */
-    transition: width 0.4s ease, background-color 0.4s ease;
+    width: 0%;                 /* Mặc định ban đầu là 0% */
+    background-color: #ff4d4d; /* Màu mặc định ban đầu là đỏ */
+    transition: width 0.5s ease, background-color 0.5s ease; 
+    /* Dòng transition trên sẽ giúp thanh dài ra và đổi màu mượt mà, không bị giật cục */
 }
 
 .strength-text { font-size: 12px; margin-top: 5px; color: #ff4d4d; }
@@ -79,6 +95,7 @@ input[type="text"] {
     font-size: 16px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+ 
 }
 .login-btn:hover{
     background-color: #2563eb;
@@ -95,10 +112,12 @@ input[type="text"] {
     display: block;
     width: 120px;      /* chỉnh kích thước logo */
     height: auto;      /* giữ đúng tỉ lệ */
-    margin: 0 auto 5px; /* căn giữa + cách dưới 05px */
+    margin: 0 auto 1px; /* căn giữa + cách dưới 05px */
     object-fit: contain;
 }
 .password-remember{
+    margin-top: 10px;
+    display: block;
     text-align: right;
     margin-bottom: 20px;
     font-size: 12px;
@@ -107,4 +126,60 @@ input[type="text"] {
 h2{
     margin-top: 5px;
     margin-bottom: 5px;
+}
+/* Trệt tiêu khoảng cách mặc định của trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 1. Cấu trúc vùng chứa chính (Full màn hình và căn giữa form) */
+.login-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ép vùng chứa cao bằng toàn bộ màn hình */
+    display: flex;
+    justify-content: center; /* Căn giữa form theo chiều ngang */
+    align-items: center;     /* Căn giữa form theo chiều dọc */
+    overflow: hidden;
+}
+
+/* 2. Tạo hình nền giả lập để làm mờ (Tránh làm mờ các chữ và ô nhập liệu bên trong) */
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Đường dẫn ảnh nền của bạn */
+    background-image: url("./backgroud.jpg"); 
+    
+    /* Thiết lập ảnh bao phủ toàn bộ body (Full screen) không bị méo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Độ mờ (Chỉnh số càng lớn thì càng mờ) */
+    filter: blur(8px); 
+    
+    /* Phóng to nhẹ nền một chút để che các góc bị lem màu trắng khi mờ */
+    transform: scale(1.1); 
+    
+    /* Đẩy lớp nền này nằm chìm dưới cùng */
+    z-index: -1; 
+}
+
+/* 3. Khung Box Đăng nhập của bạn (Giữ nguyên hoặc tinh chỉnh thêm tùy ý) */
+.login-box {
+    position: relative;
+    z-index: 1; /* Đảm bảo form luôn nổi lên trên lớp nền mờ */
+    background-color: rgba(255, 255, 255, 0.95); /* Màu nền trắng trong suốt nhẹ cho đẹp */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Độ rộng tối đa của hộp đăng nhập */
 }
